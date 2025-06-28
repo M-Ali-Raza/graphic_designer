@@ -3,14 +3,15 @@ import Heading from '@/components/Heading'
 import BodyContent from '@/components/BodyContent'
 import { getContactData } from '@/lib/getData'
 import { getContent } from '@/lib/markdown'
+import { Services } from '@/types/types'
 
 const page = () => {
-  const contacts:any[]= getContactData()
+  const contacts:Services[]= getContactData()
   const {contact_line}=getContent()
-  let lineList=contact_line.split(' ')
-  let firstNormalFont= lineList.shift()
-  let boldFont= lineList.shift()
-  let lastNormalFont=lineList.join().replaceAll(',', ' ')
+  const lineList=contact_line.split(' ')
+  const firstNormalFont= lineList.shift()
+  const boldFont= lineList.shift()
+  const lastNormalFont=lineList.join().replaceAll(',', ' ')
   return (
     <div className='px-2 py-20 md:px-5 md:py-20 lg:px-20 lg:py-10 flex flex-col gap-2 md:gap-5 lg:gap-10 max-h-screen overflow-y-auto
     items-center md:items-start text-center md:text-left'>

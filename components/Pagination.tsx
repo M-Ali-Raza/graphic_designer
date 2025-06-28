@@ -89,7 +89,7 @@ const CategoryScroll = (props: Props) => {
       );
     
     setCurrentPage(1); // Reset to first page when category changes
-  }, [activeCategory, DEFAULT_CATEGORY]);
+  }, [activeCategory, DEFAULT_CATEGORY,projects]);
 
   const scrollLeft = (): void => {
     const container = scrollContainerRef.current;

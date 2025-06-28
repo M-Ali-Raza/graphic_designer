@@ -1,13 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Capsule from "./Capsule";
+import { Services } from "@/types/types";
 
 interface Props {
-  data: any[];
+  data: Services[];
   content?: string | Promise<string>;
-  firstNormalFont: any;
-  boldFont: any;
-  lastNormalFont: any;
+  firstNormalFont: string;
+  boldFont: string;
+  lastNormalFont: string;
   subHeading?: string;
 }
 

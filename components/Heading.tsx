@@ -1,5 +1,4 @@
 import React from 'react'
-import Direction from './icons/Direction'
 interface Props{
     name?:string;
 }

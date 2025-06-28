@@ -3,9 +3,10 @@ import Heading from "@/components/Heading";
 import React from "react";
 import { getServicesData } from "@/lib/getData";
 import { getContent } from "@/lib/markdown";
+import { Services } from "@/types/types";
 
 const page = () => {
-  const services: any[] = getServicesData();
+  const services: Services[] = getServicesData();
   const { intro, job, content } = getContent();
   const introList = intro.split("!");
   const extractedIntro = introList[1].trim();

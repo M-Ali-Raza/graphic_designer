@@ -1,5 +1,3 @@
-
-
 export type Content = {
   intro: any;
   job: any;
@@ -20,4 +18,21 @@ export interface PostMetadata extends PostFrontMatter {
 
 export interface PostContent extends PostMetadata {
   contentHtml: string;
+}
+
+export interface Services {
+  logo: string;
+  title: string;
+  details: string;
+}
+
+export interface Navbar {
+  name: string;
+  path: string;
+}
+
+export interface Education {
+  subject: string;
+  institution: string;
+  details: string;
 }

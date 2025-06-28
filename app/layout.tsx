@@ -3,6 +3,7 @@ import "./globals.css";
 import Layout from "@/components/Layout";
 import { getNavbarData } from "@/lib/getData";
 import { getContent } from '@/lib/markdown';
+import { Navbar } from "@/types/types";
 
 export const metadata: Metadata = {
   title: "Portfolio Website",
@@ -17,7 +18,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const navbarData:any[] = getNavbarData();
+  const navbarData:Navbar[] = getNavbarData();
   const { logo } = getContent()
   return (
     <html lang="en">

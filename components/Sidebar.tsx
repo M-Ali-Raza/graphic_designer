@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react"; // X icon for closing the menu
+import { Navbar } from '@/types/types';
 
 interface Props{
-  navbarData:any[];
+  navbarData:Navbar[];
   logo:string;
 }
 

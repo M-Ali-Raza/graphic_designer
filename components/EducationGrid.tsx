@@ -1,9 +1,10 @@
 import React from 'react'
 import Capsule from './Capsule'
 import { getEducationData } from '@/lib/getData'
+import { Education } from '@/types/types'
 
 const EducationGrid = () => {
-  const educations:any[]=getEducationData()
+  const educations:Education[]=getEducationData()
     return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {educations.map((education, index) => (

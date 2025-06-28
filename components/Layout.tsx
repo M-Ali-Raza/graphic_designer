@@ -2,8 +2,9 @@
 
 import { usePathname } from "next/navigation";
 import Sidebar from "./Sidebar";
+import { Navbar } from "@/types/types";
 
-export default function Layout({ children,navbarData,logo }: { children: React.ReactNode;navbarData:any[];logo:string }) {
+export default function Layout({ children,navbarData,logo }: { children: React.ReactNode;navbarData:Navbar[];logo:string }) {
   const pathname = usePathname();
   const showSidebar = pathname !== "/";
 

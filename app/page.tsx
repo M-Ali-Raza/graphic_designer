@@ -2,10 +2,10 @@
 import { getNavbarData } from "@/lib/getData";
 import { getContent } from "@/lib/markdown";
 import Intro from "@/components/Intro";
-import { Content } from "@/types/types";
+import { Content, Navbar } from "@/types/types";
 
 export default function Home() {
-  const navbarData:any[] = getNavbarData();
+  const navbarData:Navbar[] = getNavbarData();
   const text:Content=getContent();
   return (
     <div>

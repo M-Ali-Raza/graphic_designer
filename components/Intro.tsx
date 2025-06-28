@@ -7,10 +7,10 @@ import AboutIcon from "./icons/AboutIcon";
 import EducationIcon from "./icons/EducationIcon";
 import PortfolioIcon from "./icons/PortfolioIcon";
 import ContactIcon from "./icons/ContactIcon";
-import { Content } from "@/types/types";
+import { Content, Navbar } from "@/types/types";
 
 interface NavbarProps {
-  navbarData: any[];
+  navbarData: Navbar[];
   text: Content;
 }
 
