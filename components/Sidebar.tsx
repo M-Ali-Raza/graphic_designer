@@ -10,7 +10,7 @@ interface Props{
   navbarData:Navbar[];
   logo:string;
 }
-
+// I add new projects
 export default function Sidebar(props:Props) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const pathname = usePathname();
