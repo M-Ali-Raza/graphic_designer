@@ -6,6 +6,4 @@ profile_logo: "/img/mhlogo.png"
 contact_line: "Feel free to contact me"
 ---
 
-I have passed my graduation in 2nd division in December 2023 and
-seeking job on the basis of my bachelor degree. I have good moral
-character, sound health and hard worker.
+I'm a novice graphic designer that loves making business cards, flyers, posters, and logos.  I like picking up new abilities and using clear, uncomplicated, and eye-catching designs to realize imaginative concepts.
