@@ -2,6 +2,7 @@
 import Heading from "@/components/Heading";
 import { getPostContent, getAllPostSlugs } from "@/lib/project";
 import Image from "next/image";
+import { notFound } from 'next/navigation';
 
 interface PageProps {
   params: Promise<{
@@ -12,6 +13,7 @@ interface PageProps {
 // This generates all the static pages at build time
 export async function generateStaticParams() {
   const posts = getAllPostSlugs();
+  console.log('Generating static params for:', posts); // Debug log
 
   return posts.map((slug) => ({
     slug: slug,
@@ -19,31 +21,38 @@ export async function generateStaticParams() {
 }
 
 const page = async (props: PageProps) => {
-  const params = await props.params; // Await the params Promise
-  const post = await getPostContent(params.slug);
-  return (
-    <div
-      className="px-2 py-20 md:px-5 md:py-20 lg:px-20 lg:py-10 flex flex-col gap-2 md:gap-5 lg:gap-10 max-h-screen overflow-y-auto
-    items-center md:items-start text-center md:text-left"
-    >
-      <Heading name={post.name.replace(/-/g," ")} />
-      <div className="flex flex-col  lg:flex-row gap-2 md:gap-5 lg:gap-10">
-        <Image
-          src={post.image}
-          alt={post.name}
-          width={500}
-          height={500}
-          className="object-cover overflow-hidden rounded-xl"
-        />
-        <div className="flex flex-col gap-2 md:gap-5 lg:gap-10">
-          <p>
-            <span className="font-bold">Category:</span> {post.category}
-          </p>
-          <div dangerouslySetInnerHTML={{ __html: post.contentHtml }}></div>
+  const params = await props.params;
+  
+  try {
+    const post = await getPostContent(params.slug);
+    
+    return (
+      <div
+        className="px-2 py-20 md:px-5 md:py-20 lg:px-20 lg:py-10 flex flex-col gap-2 md:gap-5 lg:gap-10 max-h-screen overflow-y-auto
+        items-center md:items-start text-center md:text-left"
+      >
+        <Heading name={post.name.replace(/-/g," ")} />
+        <div className="flex flex-col lg:flex-row gap-2 md:gap-5 lg:gap-10">
+          <Image
+            src={post.image}
+            alt={post.name}
+            width={500}
+            height={500}
+            className="object-cover overflow-hidden rounded-xl"
+          />
+          <div className="flex flex-col gap-2 md:gap-5 lg:gap-10">
+            <p>
+              <span className="font-bold">Category:</span> {post.category}
+            </p>
+            <div dangerouslySetInnerHTML={{ __html: post.contentHtml }}></div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } catch (error) {
+    console.error(`Error loading post ${params.slug}:`, error);
+    notFound(); // This will show the 404 page
+  }
 };
 
 export default page;

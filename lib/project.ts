@@ -9,14 +9,19 @@ import { PostMetadata, PostFrontMatter, PostContent } from '@/types/types';
 import { postsData } from './posts-data';
 
 export function getAllPostSlugs(): string[] {
-  return Object.keys(postsData);
+  const slugs = Object.keys(postsData);
+  console.log('Available slugs:', slugs); // Debug log
+  return slugs;
 }
 
 export function getPostMetadata(slug: string): PostMetadata {
   const fileContents = postsData[slug];
   
   if (!fileContents) {
-    throw new Error(`Post not found: ${slug}`);
+    const availableSlugs = Object.keys(postsData);
+    console.error(`Post not found: ${slug}`);
+    console.error('Available slugs:', availableSlugs);
+    throw new Error(`Post not found: ${slug}. Available posts: ${availableSlugs.join(', ')}`);
   }
   
   try {
@@ -37,8 +42,8 @@ export function getAllPostMetadata(): PostMetadata[] {
   return slugs.map(slug => {
     try {
       return getPostMetadata(slug);
-    } catch {
-      console.error(`Error getting metadata for ${slug}`);
+    } catch (error) {
+      console.error(`Error getting metadata for ${slug}:`, error);
       return null;
     }
   }).filter(Boolean) as PostMetadata[];
@@ -48,7 +53,10 @@ export async function getPostContent(slug: string): Promise<PostContent> {
   const fileContents = postsData[slug];
   
   if (!fileContents) {
-    throw new Error(`Post not found: ${slug}`);
+    const availableSlugs = Object.keys(postsData);
+    console.error(`Post not found: ${slug}`);
+    console.error('Available slugs:', availableSlugs);
+    throw new Error(`Post not found: ${slug}. Available posts: ${availableSlugs.join(', ')}`);
   }
   
   try {
