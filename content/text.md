@@ -6,4 +6,4 @@ profile_logo: "/img/mhlogo.png"
 contact_line: "Feel free to contact me"
 ---
 
-I'm a novice graphic designer that loves making business cards, flyers, posters, and logos.  I like picking up new abilities and using clear, uncomplicated, and eye-catching designs to realize imaginative concepts.
+Want a poster, flyer, or logo?  I use imaginative and straightforward designs to help you realize your ideas.  Let's collaborate to translate your idea into images that effectively represent your company.
