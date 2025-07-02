@@ -32,7 +32,7 @@ function generatePostsData(): void {
     const postsData: Record<string, string> = {};
     
     files.forEach(file => {
-      const slug = file.replace('.md', '');
+      const slug = file.replace('.md', '').toLowerCase(); // Convert to lowercase
       const filePath = path.join(projectsDir, file);
       
       try {
