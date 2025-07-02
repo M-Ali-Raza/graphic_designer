@@ -2,7 +2,7 @@
 // Do not edit manually
 
 export const postsData: Record<string, string> = {
-  '3D-Image-Tracing': `---
+  '3d-image-tracing': `---
 name: "3D-Image-Tracing"
 category: "Tracing"
 image: "/img/FirstAssignment-01.jpg"
@@ -11,7 +11,7 @@ image: "/img/FirstAssignment-01.jpg"
 <h2 class='text-xl font-bold'>Description</h2>
 <br>
 <p>First I create a fish image using  tracing and after that I add 3D effect on this Image.</p>`,
-  'Clock': `---
+  'clock': `---
 name: "Clock"
 category: "Tracing"
 image: "/img/clockAssignment-01.jpg"
@@ -20,7 +20,7 @@ image: "/img/clockAssignment-01.jpg"
 <h2 class='text-xl font-bold'>Description</h2>
 <br>
 <p>I create this image myself using ecllips tool.</p>`,
-  'Edit-Image': `---
+  'edit-image': `---
 name: "Edit-Image"
 category: "Editing"
 image: "/img/acnefaceAssignmet.jpg"
@@ -29,7 +29,7 @@ image: "/img/acnefaceAssignmet.jpg"
 <h2 class='text-xl font-bold'>Description</h2>
 <br>
 <p>I get this photo from google and remove its acne using healing brush tool.</p>`,
-  'Flyer': `---
+  'flyer': `---
 name: "Flyer"
 category: "Poster Design"
 image: "/img/assignment4.jpg"
@@ -38,7 +38,7 @@ image: "/img/assignment4.jpg"
 <h2 class='text-xl font-bold'>Description</h2>
 <br>
 <p>I create this flyer using adobe illustrator. I use pen tool to make crown. I use polygon tool to create price badge. I use type tool to write on this flyer.</p>`,
-  'Logo-On-Mockup': `---
+  'logo-on-mockup': `---
 name: "Logo-On-Mockup"
 category: "Editing"
 image: "/img/logoOnMockupAssignment.jpg"
@@ -47,7 +47,7 @@ image: "/img/logoOnMockupAssignment.jpg"
 <h2 class='text-xl font-bold'>Description</h2>
 <br>
 <p>I get this mockup from freepik and apply my created logo using object selection tool on this mockup.</p>`,
-  'MH-Logo': `---
+  'mh-logo': `---
 name: "MH-Logo"
 category: "Logo Design"
 image: "/img/mhlogo.jpg"
@@ -56,7 +56,7 @@ image: "/img/mhlogo.jpg"
 <h2 class='text-xl font-bold'>Description</h2>
 <br>
 <p>I create this logo using pen tool.</p>`,
-  'Photo-Edit': `---
+  'photo-edit': `---
 name: "Photo-Edit"
 category: "Editing"
 image: "/img/editingAssignment.jpg"
@@ -65,7 +65,7 @@ image: "/img/editingAssignment.jpg"
 <h2 class='text-xl font-bold'>Description</h2>
 <br>
 <p></p>`,
-  'Poster-2': `---
+  'poster-2': `---
 name: "Poster-2"
 category: "Poster Design"
 image: "/img/assignment2.jpg"
@@ -74,7 +74,7 @@ image: "/img/assignment2.jpg"
 <h2 class='text-xl font-bold'>Description</h2>
 <br>
 <p>I use pen tool for all designing in this poster. I use type tool to write content on it. I use circle tool to make points for list.</p>`,
-  'Poster': `---
+  'poster': `---
 name: "Poster"
 category: "Poster Design"
 image: "/img/assignmentPoster-01.jpg"
@@ -83,7 +83,7 @@ image: "/img/assignmentPoster-01.jpg"
 <h2 class='text-xl font-bold'>Description</h2>
 <br>
 <p>I use pen tool for all designing in this poster. I use type tool to write content on it. I use star tool to make stars for list points.</p>`,
-  'Repair-Image': `---
+  'repair-image': `---
 name: "Repair-Image"
 category: "Editing"
 image: "/img/redeyesAssignment.jpg"
@@ -92,7 +92,7 @@ image: "/img/redeyesAssignment.jpg"
 <h2 class='text-xl font-bold'>Description</h2>
 <br>
 <p>I get this photo from google and repair it using red eye tool to shows eyes normal.</p>`,
-  'Saloon-Logo': `---
+  'saloon-logo': `---
 name: "Saloon-Logo"
 category: "Logo Design"
 image: "/img/assignment6.jpg"
@@ -101,7 +101,7 @@ image: "/img/assignment6.jpg"
 <h2 class='text-xl font-bold'>Description</h2>
 <br>
 <p>I create this logo using pen tool and Write text using type tool.</p>`,
-  'School-Logo-2': `---
+  'school-logo-2': `---
 name: "School-Logo-2"
 category: "Logo Design"
 image: "/img/LOGO_DESIGN.jpg"
@@ -110,7 +110,7 @@ image: "/img/LOGO_DESIGN.jpg"
 <h2 class='text-xl font-bold'>Description</h2>
 <br>
 <p>I create this logo using pen tool and Write text using type tool. I use ellipse tool to make its boundaries.</p>`,
-  'School-Logo': `---
+  'school-logo': `---
 name: "School-Logo"
 category: "Logo Design"
 image: "/img/assignment5.jpg"
@@ -119,7 +119,7 @@ image: "/img/assignment5.jpg"
 <h2 class='text-xl font-bold'>Description</h2>
 <br>
 <p>I create this logo using pen tool and Write text using type tool.</p>`,
-  'Social-Media-Post': `---
+  'social-media-post': `---
 name: "Social-Media-Post"
 category: "Poster Design"
 image: "/img/assignment3.jpg"
@@ -128,7 +128,7 @@ image: "/img/assignment3.jpg"
 <h2 class='text-xl font-bold'>Description</h2>
 <br>
 <p>I create this social media post using adobe illustrator. I use mash tool to make mixture of colors in background. I use type tool to write content on this post.</p>`,
-  'Tracing-Image': `---
+  'tracing-image': `---
 name: "Tracing-Image"
 category: "Tracing"
 image: "/img/tracingAssignment.jpg"
