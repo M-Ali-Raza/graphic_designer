@@ -1,32 +1,25 @@
 // lib/markdown.ts
-import fs from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import remarkGfm from 'remark-gfm';
 import { PostMetadata, PostFrontMatter, PostContent } from '@/types/types';
 
-// Change to public directory
-const contentDirectory = path.join(process.cwd(), 'public', 'projects');
+// Import the generated posts data
+import { postsData } from './posts-data';
 
 export function getAllPostSlugs(): string[] {
-  try {
-    const fileNames = fs.readdirSync(contentDirectory);
-    return fileNames
-      .filter(fileName => fileName.endsWith('.md'))
-      .map(fileName => fileName.replace(/\.md$/, ''));
-  } catch (error) {
-    console.error('Error reading directory:', error);
-    return [];
-  }
+  return Object.keys(postsData);
 }
 
 export function getPostMetadata(slug: string): PostMetadata {
-  const fullPath = path.join(contentDirectory, `${slug}.md`);
+  const fileContents = postsData[slug];
+  
+  if (!fileContents) {
+    throw new Error(`Post not found: ${slug}`);
+  }
   
   try {
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
     const matterResult = matter(fileContents);
     
     return {
@@ -34,30 +27,31 @@ export function getPostMetadata(slug: string): PostMetadata {
       ...matterResult.data as PostFrontMatter
     };
   } catch (error) {
-    console.error(`Error reading file ${fullPath}:`, error);
-    throw new Error(`Could not read post: ${slug}`);
+    console.error(`Error parsing metadata for ${slug}:`, error);
+    throw new Error(`Could not parse post metadata: ${slug}`);
   }
 }
 
 export function getAllPostMetadata(): PostMetadata[] {
   const slugs = getAllPostSlugs();
-  const posts = slugs.map(slug => {
+  return slugs.map(slug => {
     try {
       return getPostMetadata(slug);
-    } catch (error) {
-      console.error(`Error getting metadata for ${slug}:`, error);
+    } catch {
+      console.error(`Error getting metadata for ${slug}`);
       return null;
     }
   }).filter(Boolean) as PostMetadata[];
-  
-  return posts;
 }
 
 export async function getPostContent(slug: string): Promise<PostContent> {
-  const fullPath = path.join(contentDirectory, `${slug}.md`);
+  const fileContents = postsData[slug];
+  
+  if (!fileContents) {
+    throw new Error(`Post not found: ${slug}`);
+  }
   
   try {
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
     const matterResult = matter(fileContents);
     
     const processedContent = await remark()
@@ -73,7 +67,7 @@ export async function getPostContent(slug: string): Promise<PostContent> {
       ...matterResult.data as PostFrontMatter
     };
   } catch (error) {
-    console.error(`Error reading post content for ${slug}:`, error);
-    throw new Error(`Could not read post content: ${slug}`);
+    console.error(`Error processing content for ${slug}:`, error);
+    throw new Error(`Could not process post content: ${slug}`);
   }
 }
